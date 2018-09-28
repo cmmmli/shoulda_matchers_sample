@@ -15,5 +15,18 @@ module ShouldaMatchersSample
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.generators do |g|
+      g.jbuilder false
+      g.assets false
+      g.decorator false
+      g.helper false
+      g.integration_tool false
+      g.test_framework :rspec,
+                       controller_specs: false,
+                       view_specs: false,
+                       request_specs: false,
+                       routing_specs: false
+    end
   end
 end
