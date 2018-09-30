@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.create(
-    name: "komo",
-    age: 22,
-    gendar: "male",
-    email: "thekomori1113@gmail.com"
-  )
+  let(:user) { FactoryBot.build(:user) }
 
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
